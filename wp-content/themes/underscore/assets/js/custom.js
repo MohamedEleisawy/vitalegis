@@ -56,4 +56,3 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenu.classList.add("translate-x-full");
     });
   });
-  

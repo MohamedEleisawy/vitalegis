@@ -7,7 +7,8 @@
             class="relative min-h-screen grid place-items-center text-center overflow-hidden"
             style="background-color: <?= esc_attr(get_field('hero_background_color')); ?>;">
             <?php
-            $image_data = get_field('image_hero');
+            $default_image = get_template_directory_uri() . '/assets/images/montagne.png';
+            $image_data = get_field('image_hero') ? get_field('image_hero') : $default_image;
             $hero_title = get_field('hero_title');
             $hero_subtitle = get_field('hero_subtitle');
             $hero_button_text = get_field('hero_button_text');
