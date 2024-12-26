@@ -118,7 +118,7 @@ get_header();
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Avantage 1 -->
                 <div class="grid gap-4 text-center group">
-                <div
+                    <div
                         class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
                         <?php echo get_field('icone_avantage_01'); ?> <!-- Icône avantage 2 -->
 
@@ -163,71 +163,100 @@ get_header();
         </div>
     </section>
 
-    </section>
-    </section>
 
+    <?php
+    // Récupération des champs ACF
+    $titre = get_field('contact_titre');
+    $description = get_field('contact_description');
+    $avantage_1 = get_field('contact_avantage_1');
+    $avantage_2 = get_field('contact_avantage_2');
+    $avantage_3 = get_field('contact_avantage_3');
+    $placeholder_nom = get_field('contact_placeholder_nom');
+    $placeholder_prenom = get_field('contact_placeholder_prenom');
+    $placeholder_email = get_field('contact_placeholder_email');
+    $placeholder_telephone = get_field('contact_placeholder_telephone');
+    $placeholder_projet = get_field('contact_placeholder_projet');
+    $texte_bouton = get_field('contact_texte_bouton');
+
+    // Couleurs dynamiques
+    $background_color = get_field('contact_background_color') ?: '#f7f7f7';
+    $text_color = get_field('contact_text_color') ?: '#333333';
+    $button_color = get_field('contact_button_color') ?: '#1e3a8a';
+    $button_hover_color = get_field('contact_button_hover_color') ?: '#2563eb';
+    ?>
 
     <!-- Contact Section -->
-    <section id="Contact" class="py-20 bg-gray-100">
+    <section id="Contact" class="py-20" style="background-color: <?php echo esc_attr($background_color); ?>;">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="text-gray-900 grid gap-4">
-                    <h2 class="text-3xl font-bold">Contactez-nous !</h2>
-                    <p>
-                        Si vous souhaitez en savoir plus sur notre service ou pour
-                        répondre à vos besoins
-                    </p>
+                <div class="grid gap-4" style="color: <?php echo esc_attr($text_color); ?>;">
+                    <h2 class="text-3xl font-bold"><?php echo esc_html($titre); ?></h2>
+                    <p><?php echo esc_html($description); ?></p>
                     <div class="grid gap-4">
-                        <div class="grid grid-cols-[auto,1fr] gap-2 items-center">
-                            <div class="w-6 h-6 rounded-full bg-blue-600 grid place-items-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M5 13l4 4L19 7"></path>
-                                </svg>
+                        <?php if ($avantage_1): ?>
+                            <div class="grid grid-cols-[auto,1fr] gap-2 items-center">
+                                <div class="w-6 h-6 rounded-full grid place-items-center"
+                                    style="background-color: <?php echo esc_attr($button_color); ?>;">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span><?php echo esc_html($avantage_1); ?></span>
                             </div>
-                            <span>Réponse en - de 24H</span>
-                        </div>
-                        <div class="grid grid-cols-[auto,1fr] gap-2 items-center">
-                            <div class="w-6 h-6 rounded-full bg-blue-600 grid place-items-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M5 13l4 4L19 7"></path>
-                                </svg>
+                        <?php endif; ?>
+                        <?php if ($avantage_2): ?>
+                            <div class="grid grid-cols-[auto,1fr] gap-2 items-center">
+                                <div class="w-6 h-6 rounded-full grid place-items-center"
+                                    style="background-color: <?php echo esc_attr($button_color); ?>;">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span><?php echo esc_html($avantage_2); ?></span>
                             </div>
-                            <span>Support personnalisé</span>
-                        </div>
-                        <div class="grid grid-cols-[auto,1fr] gap-2 items-center">
-                            <div class="w-6 h-6 rounded-full bg-blue-600 grid place-items-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M5 13l4 4L19 7"></path>
-                                </svg>
+                        <?php endif; ?>
+                        <?php if ($avantage_3): ?>
+                            <div class="grid grid-cols-[auto,1fr] gap-2 items-center">
+                                <div class="w-6 h-6 rounded-full grid place-items-center"
+                                    style="background-color: <?php echo esc_attr($button_color); ?>;">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span><?php echo esc_html($avantage_3); ?></span>
                             </div>
-                            <span>Satisfaction garantie</span>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <form class="bg-white shadow-lg rounded-lg p-6 grid gap-4">
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Nom"
+                        <input type="text" placeholder="<?php echo esc_attr($placeholder_nom); ?>"
                             class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                        <input type="text" placeholder="Prénom"
+                        <input type="text" placeholder="<?php echo esc_attr($placeholder_prenom); ?>"
                             class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
-                    <input type="email" placeholder="Adresse mail"
+                    <input type="email" placeholder="<?php echo esc_attr($placeholder_email); ?>"
                         class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <input type="tel" placeholder="Téléphone"
+                    <input type="tel" placeholder="<?php echo esc_attr($placeholder_telephone); ?>"
                         class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <textarea placeholder="Expliquez-nous votre projet..."
+                    <textarea placeholder="<?php echo esc_attr($placeholder_projet); ?>"
                         class="w-full px-3 py-2 rounded-2xl bg-gray-100 text-gray-900 min-h-[120px] transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    <button type="submit"
-                        class="w-full py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300">
-                        Envoyer
+                    <button type="submit" class="w-full py-2 rounded-full text-white transition-colors duration-300"
+                        style="background-color: <?php echo esc_attr($button_color); ?>; 
+                           color: white;"
+                        onmouseover="this.style.backgroundColor='<?php echo esc_attr($button_hover_color); ?>'"
+                        onmouseout="this.style.backgroundColor='<?php echo esc_attr($button_color); ?>'">
+                        <?php echo esc_html($texte_bouton); ?>
                     </button>
                 </form>
             </div>
         </div>
     </section>
+
+
 </main>
 
 <?php
