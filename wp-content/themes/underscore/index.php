@@ -63,7 +63,7 @@ get_header();
             </div>
             <div class="space-y-6 px-4 md:px-0">
                 <h2 class="text-2xl font-semibold text-blue-300"><?php
-                                                                    echo esc_html($titre1); ?></h2>
+                echo esc_html($titre1); ?></h2>
                 <p class="text-white leading-relaxed"><?php echo esc_html($description1); ?></p>
             </div>
         </div>
@@ -100,65 +100,72 @@ get_header();
 
     <!-- Advantages Section -->
     <section class="py-20 bg-gray-800 relative">
-    <div style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Fond-services-avantages.png');"
-         class="absolute inset-0 opacity-10 bg-cover bg-center">
-    </div>
-    <div class="container mx-auto px-4 relative">
-        <!-- Titre et sous-titre dynamiques -->
-        <div class="grid gap-4 text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white">
-                <?php the_field('titre_section_avantages'); ?> <!-- Récupérer le titre -->
-            </h2>
-            <p class="text-gray-300">
-                <?php the_field('sous_titre_section_avantages'); ?> <!-- Récupérer le sous-titre -->
-            </p>
+        <div style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Fond-services-avantages.png');"
+            class="absolute inset-0 opacity-10 bg-cover bg-center">
         </div>
-
-        <!-- Avantages dynamiques -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Avantage 1 -->
-            <div class="grid gap-4 text-center group">
-                <div class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
-                    <?php echo get_field('icone_avantage_1'); ?> <!-- Icône avantage 1 -->
-                </div>
-                <h3 class="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-500">
-                    <?php echo esc_html(get_field('titre_avantage_1')); ?> <!-- Titre avantage 1 -->
-                </h3>
+        <div class="container mx-auto px-4 relative">
+            <!-- Titre et sous-titre dynamiques -->
+            <div class="grid gap-4 text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">
+                    <?php the_field('titre_section_avantages'); ?> <!-- Récupérer le titre -->
+                </h2>
                 <p class="text-gray-300">
-                    <?php echo esc_html(get_field('description_avantage_1')); ?> <!-- Description avantage 1 -->
+                    <?php the_field('sous_titre_section_avantages'); ?> <!-- Récupérer le sous-titre -->
                 </p>
             </div>
 
-            <!-- Avantage 2 -->
-            <div class="grid gap-4 text-center group">
-                <div class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
-                    <?php echo get_field('icone_avantage_2'); ?> <!-- Icône avantage 2 -->
-                </div>
-                <h3 class="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-500">
-                    <?php echo esc_html(get_field('titre_avantage_2')); ?> <!-- Titre avantage 2 -->
-                </h3>
-                <p class="text-gray-300">
-                    <?php echo esc_html(get_field('description_avantage_2')); ?> <!-- Description avantage 2 -->
-                </p>
-            </div>
+            <!-- Avantages dynamiques -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Avantage 1 -->
+                <div class="grid gap-4 text-center group">
+                <div
+                        class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
+                        <?php echo get_field('icone_avantage_01'); ?> <!-- Icône avantage 2 -->
 
-            <!-- Avantage 3 -->
-            <div class="grid gap-4 text-center group">
-                <div class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
-                    <?php echo get_field('icone_avantage_3'); ?> <!-- Icône avantage 3 -->
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-500">
+                        <?php echo esc_html(get_field('titre_avantage_1')); ?> <!-- Titre avantage 1 -->
+                    </h3>
+                    <p class="text-gray-300">
+                        <?php echo esc_html(get_field('description_avantage_1')); ?> <!-- Description avantage 1 -->
+                    </p>
                 </div>
-                <h3 class="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-500">
-                    <?php echo esc_html(get_field('titre_avantage_3')); ?> <!-- Titre avantage 3 -->
-                </h3>
-                <p class="text-gray-300">
-                    <?php echo esc_html(get_field('description_avantage_3')); ?> <!-- Description avantage 3 -->
-                </p>
+
+                <!-- Avantage 2 -->
+                <div class="grid gap-4 text-center group">
+                    <div
+                        class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-500">
+                        <?php echo esc_html(get_field('titre_avantage_2')); ?> <!-- Titre avantage 2 -->
+                    </h3>
+                    <p class="text-gray-300">
+                        <?php echo esc_html(get_field('description_avantage_2')); ?> <!-- Description avantage 2 -->
+                    </p>
+                </div>
+
+                <!-- Avantage 3 -->
+                <div class="grid gap-4 text-center group">
+                    <div
+                        class="w-24 h-24 justify-self-center text-blue-500 transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-500">
+                        <?php echo esc_html(get_field('titre_avantage_3')); ?> <!-- Titre avantage 3 -->
+                    </h3>
+                    <p class="text-gray-300">
+                        <?php echo esc_html(get_field('description_avantage_3')); ?> <!-- Description avantage 3 -->
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     </section>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="Contact" class="py-20 bg-gray-100">

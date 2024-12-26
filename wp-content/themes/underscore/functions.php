@@ -242,5 +242,3 @@ function vitalegis_custom_login_page() {
     }
 }
 add_action('template_redirect', 'vitalegis_custom_login_page');
-
-
