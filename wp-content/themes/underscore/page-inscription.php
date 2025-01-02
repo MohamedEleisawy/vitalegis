@@ -21,85 +21,16 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8  ">
+    <main class="container mx-auto px-4 py-8">
         <div class="max-w-2xl mx-auto">
-            <button class="justify-self-start mt-4 ">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <!-- Form Title -->
-            <h1 class="text-2xl md:text-3xl font-bold text-black text-center mb-8 font-gogh">
-                S'inscrire
-            </h1>
 
-            <!-- Form -->
-            <form class="grid gap-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-black mb-2">
-                            Nom <span class="text-red-500">*</span>
-                        </label>
-                        <input type="text" required class="w-full p-2 rounded-md border border-gray-300">
-                    </div>
-                    <div>
-                        <label class="block text-black mb-2">
-                            Prénom <span class="text-red-500">*</span>
-                        </label>
-                        <input type="text" required class="w-full p-2 rounded-md border border-gray-300">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-black mb-2">
-                        Adresse postale
-                    </label>
-                    <input type="text" class="w-full p-2 rounded-md border border-gray-300">
-                </div>
-
-                <div>
-                    <label class="block text-black mb-2">
-                        Date de naissance <span class="text-red-500">*</span>
-                    </label>
-                    <input type="date" required class="w-full p-2 rounded-md border border-gray-300">
-                </div>
-
-                <div>
-                    <label class="block text-black mb-2">
-                        Adresse mail <span class="text-red-500">*</span>
-                    </label>
-                    <input type="email" required class="w-full p-2 rounded-md border border-gray-300">
-                </div>
-
-                <div>
-                    <label class="block text-black mb-2">
-                        N° de téléphone
-                    </label>
-                    <input type="tel" class="w-full p-2 rounded-md border border-gray-300">
-                </div>
-
-                <div>
-                    <label class="block text-black mb-2">
-                        Mot de passe <span class="text-red-500">*</span>
-                    </label>
-                    <input type="password" required class="w-full p-2 rounded-md border border-gray-300">
-                </div>
-
-                <p class="text-sm text-gray-500">
-                    <span class="text-red-500">*</span> Obligatoire
-                </p>
-
-                <div class="grid justify-items-center">
-                    <button type="submit" class="bg-gray-900 text-white px-8 py-3 rounded-md hover:bg-gray-800">
-                        Valider
-                    </button>
-                </div>
-
-                <p class="text-center text-gray-600 text-sm">
-                    Vous avez un compte ?
-                    <a href="#" class="text-black underline hover:text-gray-600">
-                        Connectez-vous ici
-                    </a>
-                </p>
-            </form>
+            <!-- Formulaire Ultimate Member -->
+            <div class="test">
+                <?php echo do_shortcode('[ultimatemember form_id="322"]'); ?>
+                <style>
+                    
+                </style>
+            </div>
         </div>
     </main>
 </body>

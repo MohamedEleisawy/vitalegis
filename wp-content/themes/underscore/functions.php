@@ -221,7 +221,7 @@ add_action('wp_enqueue_scripts', 'vitalegis_enqueue_assets');
 // Permettre à l'administrateur de définir l'image de bannière via le Customizer :
 
 
-// charger ce fichier js
+// load javascript file
 function vitalegis_enqueue_scripts() {
     wp_enqueue_script(
         'custom-js',
@@ -235,10 +235,15 @@ add_action('wp_enqueue_scripts', 'vitalegis_enqueue_scripts');
 
 
 function vitalegis_custom_login_page() {
-    // Utilisation d'un modèle personnalisé pour la page de connexion
+	// use custom template for login page
     if( is_page('connexion') ) {
-        include( get_template_directory() . '/page-connexion.php' ); // page-login.php doit être un fichier dans votre dossier thème
+        include( get_template_directory() . '/page-connexion.php' ); 
         exit;
     }
 }
 add_action('template_redirect', 'vitalegis_custom_login_page');
+
+function um_custom_styles() {
+    wp_enqueue_style('um-custom', get_template_directory_uri() . '/assets/css/style.css');
+}
+add_action('wp_enqueue_scripts', 'um_custom_styles', 99);

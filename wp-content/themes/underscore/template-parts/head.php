@@ -43,5 +43,6 @@
             font-family: 'gogh';
             src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/Gogh-ExtraBold.otf');
         }
+        
     </style>
 </head>
