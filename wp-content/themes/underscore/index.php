@@ -161,6 +161,9 @@ get_header();
                 </div>
             </div>
         </div>
+        <?php echo do_shortcode('[pdf_viewer url="http://127.0.0.1/wordpress-6.7-fr_FR/wordpress/wp-content/uploads/2024/12/fiche-revisiion.pdf"]'); ?>
+
+</section>
     </section>
 
 
@@ -254,6 +257,7 @@ get_header();
                 </form>
             </div>
         </div>
+        
     </section>
 
 

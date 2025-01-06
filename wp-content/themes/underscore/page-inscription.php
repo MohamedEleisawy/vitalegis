@@ -27,9 +27,6 @@
             <!-- Formulaire Ultimate Member -->
             <div class="test">
                 <?php echo do_shortcode('[ultimatemember form_id="322"]'); ?>
-                <style>
-                    
-                </style>
             </div>
         </div>
     </main>

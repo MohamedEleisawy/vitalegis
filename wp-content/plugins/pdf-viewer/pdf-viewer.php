@@ -51,4 +51,3 @@ function pdf_viewer_enqueue_scripts() {
     wp_enqueue_style('pdf_viewer_style', plugins_url('pdf-viewer.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'pdf_viewer_enqueue_scripts');
-
