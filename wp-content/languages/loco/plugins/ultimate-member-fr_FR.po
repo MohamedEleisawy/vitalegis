@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-11-15T00:51:57+00:00\n"
-"PO-Revision-Date: 2025-01-06 10:30+0000\n"
+"PO-Revision-Date: 2025-01-07 21:34+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ultimate-member\n"
 "Language: fr_FR\n"
@@ -7310,7 +7310,7 @@ msgstr ""
 #: includes/class-config.php:249 includes/class-config.php:933
 #: includes/class-config.php:994 includes/core/class-form.php:1055
 msgid "Login"
-msgstr ""
+msgstr "Connexion"
 
 #: includes/class-config.php:132 includes/class-config.php:239
 #: includes/class-config.php:253 includes/class-config.php:936
@@ -10749,7 +10749,7 @@ msgstr ""
 
 #: includes/core/um-actions-login.php:15
 msgid "Please enter your username or email"
-msgstr ""
+msgstr "Veuillez saisir votre adresse mail"
 
 #: includes/core/um-actions-login.php:19
 msgid "Please enter your username"
@@ -10761,12 +10761,12 @@ msgstr ""
 
 #: includes/core/um-actions-login.php:47
 msgid "Please enter your password"
-msgstr ""
+msgstr "Veuillez saisir votre mot de passe"
 
 #: includes/core/um-actions-login.php:54 includes/core/um-actions-login.php:69
 #: includes/core/um-actions-login.php:78
 msgid "Password is incorrect. Please try again."
-msgstr ""
+msgstr "Le mot de passe est incorrect. Veuillez réessayer."
 
 #: includes/core/um-actions-login.php:206
 msgid "This action has been prevented for security measures."
@@ -10774,11 +10774,11 @@ msgstr ""
 
 #: includes/core/um-actions-login.php:422
 msgid "Keep me signed in"
-msgstr ""
+msgstr "Garder ma session ouverte"
 
 #: includes/core/um-actions-login.php:466
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Mot de passe oublié ?"
 
 #: includes/core/um-actions-misc.php:110
 msgid "Your account was updated successfully."

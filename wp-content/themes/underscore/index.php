@@ -56,17 +56,25 @@ get_header();
         ?>
         <!-- Section 1 -->
         <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">
-            <div
-                class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md">
-                <img src="<?php echo esc_url($image1); ?>" alt="<?php echo esc_attr($alt_image_1) ?>"
-                    class="parallax-img w-full h-full object-cover" />
+    <div class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md">
+        <?php if ($image1): ?>
+            <img src="<?php echo esc_url($image1); ?>" alt="<?php echo esc_attr($alt_image_1); ?>"
+                class="parallax-img w-full h-full object-cover" />
+        <?php else: ?>
+            <div class="bg-gray-200 w-full h-full flex items-center justify-center text-gray-500">
+                Image non disponible
             </div>
-            <div class="space-y-6 px-4 md:px-0">
-                <h2 class="text-2xl font-semibold text-blue-300"><?php
-                echo esc_html($titre1); ?></h2>
-                <p class="text-white leading-relaxed"><?php echo esc_html($description1); ?></p>
-            </div>
-        </div>
+        <?php endif; ?>
+    </div>
+    <div class="space-y-6 px-4 md:px-0">
+        <h2 class="text-2xl font-semibold text-blue-300">
+            <?php echo esc_html($titre1 ?: 'Titre non disponible'); ?>
+        </h2>
+        <p class="text-white leading-relaxed">
+            <?php echo esc_html($description1 ?: 'Description non disponible'); ?>
+        </p>
+    </div>
+</div>
 
         <!-- Section 2 -->
         <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">

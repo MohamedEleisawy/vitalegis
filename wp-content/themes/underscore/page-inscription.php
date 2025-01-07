@@ -11,17 +11,13 @@
 <body class="min-h-screen grid grid-rows-[auto,1fr,auto] bg-white">
     <?php get_template_part('template-parts/navigation'); ?>
     <!-- Header -->
-    <header class="grid grid-cols-2 items-center p-4 bg-white border-b border-gray-200">
-        <div class="bg-gray-300 rounded-lg px-6 py-2 w-max">
-            <span class="font-bold text-gray-800">LOGO</span>
-        </div>
-        <button class="bg-white text-black border border-black px-4 py-2 rounded-lg justify-self-end hover:bg-gray-100">
-            Se connecter
-        </button>
-    </header>
-
+<header>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800">Inscription</h1>
+    </div>
+</header>
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-20">
         <div class="max-w-2xl mx-auto">
 
             <!-- Formulaire Ultimate Member -->
