@@ -56,25 +56,25 @@ get_header();
         ?>
         <!-- Section 1 -->
         <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">
-    <div class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md">
-        <?php if ($image1): ?>
-            <img src="<?php echo esc_url($image1); ?>" alt="<?php echo esc_attr($alt_image_1); ?>"
-                class="parallax-img w-full h-full object-cover" />
-        <?php else: ?>
-            <div class="bg-gray-200 w-full h-full flex items-center justify-center text-gray-500">
-                Image non disponible
+            <div class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md">
+                <?php if ($image1): ?>
+                    <img src="<?php echo esc_url($image1); ?>" alt="<?php echo esc_attr($alt_image_1); ?>"
+                        class="parallax-img w-full h-full object-cover" />
+                <?php else: ?>
+                    <div class="bg-gray-200 w-full h-full flex items-center justify-center text-gray-500">
+                        Image non disponible
+                    </div>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
-    </div>
-    <div class="space-y-6 px-4 md:px-0">
-        <h2 class="text-2xl font-semibold text-blue-300">
-            <?php echo esc_html($titre1 ?: 'Titre non disponible'); ?>
-        </h2>
-        <p class="text-white leading-relaxed">
-            <?php echo esc_html($description1 ?: 'Description non disponible'); ?>
-        </p>
-    </div>
-</div>
+            <div class="space-y-6 px-4 md:px-0">
+                <h2 class="text-2xl font-semibold text-blue-300">
+                    <?php echo esc_html($titre1 ?: 'Titre non disponible'); ?>
+                </h2>
+                <p class="text-white leading-relaxed">
+                    <?php echo esc_html($description1 ?: 'Description non disponible'); ?>
+                </p>
+            </div>
+        </div>
 
         <!-- Section 2 -->
         <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">
@@ -171,7 +171,7 @@ get_header();
         </div>
         <?php echo do_shortcode('[pdf_viewer url="http://127.0.0.1/wordpress-6.7-fr_FR/wordpress/wp-content/uploads/2024/12/fiche-revisiion.pdf"]'); ?>
 
-</section>
+    </section>
     </section>
 
 
@@ -242,30 +242,48 @@ get_header();
                         <?php endif; ?>
                     </div>
                 </div>
-                <form class="bg-white shadow-lg rounded-lg p-6 grid gap-4">
+
+                <?php
+                include 'form-contact-traitement.php';
+                ?>
+
+                <form method="post" class="bg-white shadow-lg rounded-lg p-6 grid gap-4">
+                    <!-- Message de confirmation/erreur -->
+                    <div id="form-message" class="text-center"></div>
+
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="<?php echo esc_attr($placeholder_nom); ?>"
+                        <input type="text" name="nom" required
+                            placeholder="<?php echo esc_attr($placeholder_nom); ?>"
                             class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                        <input type="text" placeholder="<?php echo esc_attr($placeholder_prenom); ?>"
+                        <input type="text" name="prenom" required
+                            placeholder="<?php echo esc_attr($placeholder_prenom); ?>"
                             class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
-                    <input type="email" placeholder="<?php echo esc_attr($placeholder_email); ?>"
+
+                    <input type="email" name="email" required
+                        placeholder="<?php echo esc_attr($placeholder_email); ?>"
                         class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <input type="tel" placeholder="<?php echo esc_attr($placeholder_telephone); ?>"
+
+                    <input type="tel" name="telephone" required
+                        placeholder="<?php echo esc_attr($placeholder_telephone); ?>"
                         class="w-full px-3 py-2 rounded-full bg-gray-100 text-gray-900 transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <textarea placeholder="<?php echo esc_attr($placeholder_projet); ?>"
+
+                    <textarea name="projet" required
+                        placeholder="<?php echo esc_attr($placeholder_projet); ?>"
                         class="w-full px-3 py-2 rounded-2xl bg-gray-100 text-gray-900 min-h-[120px] transition-colors duration-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    <button type="submit" class="w-full py-2 rounded-full text-white transition-colors duration-300"
-                        style="background-color: <?php echo esc_attr($button_color); ?>; 
-                           color: white;"
+
+                    <button type="submit" name="submit"
+                        class="w-full py-2 rounded-full text-white transition-colors duration-300"
+                        style="background-color: <?php echo esc_attr($button_color); ?>;"
                         onmouseover="this.style.backgroundColor='<?php echo esc_attr($button_hover_color); ?>'"
                         onmouseout="this.style.backgroundColor='<?php echo esc_attr($button_color); ?>'">
                         <?php echo esc_html($texte_bouton); ?>
                     </button>
                 </form>
+
             </div>
         </div>
-        
+
     </section>
 
 
