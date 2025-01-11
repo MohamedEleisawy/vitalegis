@@ -18,8 +18,8 @@ if (isset($_POST['submit'])) {
 
     // S'il n'y a pas d'erreurs
     if (empty($errors)) {
-        // $to = get_option('admin_email');
-        $to = 'esdigitalcampus@gmail.com'; 
+        $to = get_option('admin_email');
+        // $to = 'esdigitalcampus@gmail.com'; 
         $subject = 'Nouveau message de contact de ' . $nom . ' ' . $prenom;
         $body = "Nouveau message de contact :\n\n";
         $body .= "Nom : " . $nom . "\n";

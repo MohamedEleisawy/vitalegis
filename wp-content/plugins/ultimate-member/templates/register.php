@@ -104,6 +104,14 @@ if (! is_user_logged_in()) {
                 color: #e74c3c;
                 margin-bottom: 1.5rem;
             }
+
+            .um-field-label[aria-required="true"]::after {
+                content: " *";
+                color: red;
+                /* Couleur de l'étoile */
+                font-weight: bold;
+                /* Optionnel : pour rendre l'étoile plus visible */
+            }
         </style>
 
         <!-- Titre -->
@@ -122,7 +130,12 @@ if (! is_user_logged_in()) {
             <div class="um-field">
                 <?php do_action('um_after_form_fields', $args); ?>
                 <?php do_action("um_after_{$mode}_fields", $args); ?>
+                <p class="font-bold italic">Champ obligatoire *</p>
             </div>
+
+        
+            <!-- add me champ obligatoire * -->
+            
         </form>
     </div>
 </div>

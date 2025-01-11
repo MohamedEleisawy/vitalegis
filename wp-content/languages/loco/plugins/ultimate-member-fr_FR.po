@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-11-15T00:51:57+00:00\n"
-"PO-Revision-Date: 2025-01-07 21:34+0000\n"
+"PO-Revision-Date: 2025-01-11 15:32+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ultimate-member\n"
 "Language: fr_FR\n"
@@ -10717,7 +10717,7 @@ msgstr ""
 #: includes/core/um-actions-form.php:939 includes/core/um-actions-form.php:941
 #: includes/core/um-actions-form.php:948
 msgid "The email you entered is incorrect"
-msgstr ""
+msgstr "L'adresse email que vous avez saisie est incorrecte"
 
 #: includes/core/um-actions-form.php:934
 msgid "Your email contains invalid characters"
