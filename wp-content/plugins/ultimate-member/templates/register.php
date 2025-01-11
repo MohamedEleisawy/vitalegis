@@ -126,11 +126,11 @@ if (! is_user_logged_in()) {
                 <?php do_action("um_main_{$mode}_fields", $args); ?>
             </div>
 
+            <p class="font-bold italic">Champ obligatoire *</p>
 
             <div class="um-field">
                 <?php do_action('um_after_form_fields', $args); ?>
                 <?php do_action("um_after_{$mode}_fields", $args); ?>
-                <p class="font-bold italic">Champ obligatoire *</p>
             </div>
 
         
