@@ -22,7 +22,7 @@
         <div class="max-w-2xl mx-auto">
             <!-- Formulaire Ultimate Member -->
             <div class="test">
-                <?php echo do_shortcode('[ultimatemember form_id="323"]'); // Remplacez "123" par l'ID de votre formulaire de connexion ?>
+                <?php echo do_shortcode('[ultimatemember form_id="323"]');  ?>
             </div>
         </div>
     </main>

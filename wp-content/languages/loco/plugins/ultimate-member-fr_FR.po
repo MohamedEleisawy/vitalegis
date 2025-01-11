@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-11-15T00:51:57+00:00\n"
-"PO-Revision-Date: 2025-01-11 15:32+0000\n"
+"PO-Revision-Date: 2025-01-11 23:20+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ultimate-member\n"
 "Language: fr_FR\n"
@@ -1072,7 +1072,7 @@ msgstr ""
 
 #: includes/admin/class-site-health.php:931 includes/core/class-profile.php:152
 msgid "About"
-msgstr ""
+msgstr "À propos"
 
 #: includes/admin/class-site-health.php:935 includes/core/class-profile.php:156
 msgid "Posts"
@@ -6633,7 +6633,7 @@ msgstr ""
 #: includes/core/um-actions-profile.php:1497
 #: includes/core/um-actions-profile.php:1504
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: includes/admin/templates/modal/forms/dynamic_edit_row.php:9
 msgid "Edit Row Settings"
@@ -7323,7 +7323,7 @@ msgstr "S'inscricre"
 #: includes/core/um-actions-profile.php:1503
 #: includes/core/um-actions-user.php:19
 msgid "Logout"
-msgstr ""
+msgstr "Déconnexion"
 
 #: includes/class-config.php:136 includes/class-config.php:948
 #: includes/class-config.php:1014
@@ -9805,8 +9805,8 @@ msgstr ""
 #: includes/core/class-date-time.php:152
 msgid "%s year old"
 msgid_plural "%s years old"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s an"
+msgstr[1] "%s ans"
 
 #. translators: %s: The message after registration process based on a role data and user status after registration
 #. translators: %s: Restricted blog page message.
@@ -10176,12 +10176,12 @@ msgstr ""
 #: includes/core/um-actions-profile.php:1470
 #: includes/core/um-actions-profile.php:1501
 msgid "Edit Profile"
-msgstr ""
+msgstr "Modifier le profil"
 
 #: includes/core/class-member-directory.php:2640
 #: includes/core/um-actions-profile.php:1502
 msgid "My Account"
-msgstr ""
+msgstr "Mon compte"
 
 #: includes/core/class-password.php:407
 msgid "Please provide your username or email"
@@ -10623,7 +10623,7 @@ msgstr ""
 #. translators: %1$s is a label; %2$s is a max chars.
 #: includes/core/um-actions-form.php:623
 msgid "Your %1$s must contain less than %2$s characters"
-msgstr ""
+msgstr "Votre %1$s doit contenir moins de %2$s caractères"
 
 #: includes/core/um-actions-form.php:631
 msgid "You can not use HTML tags here"
@@ -10733,7 +10733,7 @@ msgstr ""
 
 #: includes/core/um-actions-form.php:987
 msgid "You must provide alphabetic letters"
-msgstr ""
+msgstr "Vous devez fournir des lettres alphabétiques"
 
 #: includes/core/um-actions-form.php:995
 msgid "You must provide alphabetic letters or numbers"
@@ -11015,7 +11015,7 @@ msgstr ""
 
 #: templates/members-grid.php:80
 msgid "Edit profile"
-msgstr ""
+msgstr "Modifier le profil"
 
 #: templates/members-pagination.php:19
 msgid "Jump to page:"

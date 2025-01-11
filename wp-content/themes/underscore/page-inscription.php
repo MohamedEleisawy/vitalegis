@@ -3,6 +3,7 @@
  * Template Name: Inscription
  * version: 1.0
  * Description: Page d'inscription
+ * author: Damien Hourriez
  */
 ?>
 <?php get_template_part('template-parts/head'); ?>
@@ -26,5 +27,4 @@
             </div>
         </div>
     </main>
-</body>
 <?php get_footer(); ?>
