@@ -50,11 +50,6 @@
     </div>
 </footer>
 <script>
-    // parallax presentation background
-
-
-
-    // parallax presentation background
  
 </script>
 </body>

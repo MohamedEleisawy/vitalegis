@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="um <?php echo esc_attr( $this->get_class( $mode ) ); ?> um-<?php echo esc_attr( $form_id ); ?>">
+[ultimatemember_account]
 
 	<div class="um-form">
 
@@ -192,5 +193,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'um_after_account_page_load' );
 		?>
+		
 	</div>
 </div>

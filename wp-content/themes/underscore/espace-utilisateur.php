@@ -6,8 +6,8 @@ Description: Page espace utilisateur
 Author: Damien Hourriez
 */
 
- get_template_part('template-parts/head'); ?>
- 
+get_template_part('template-parts/head'); ?>
+
 <style>
     .desktop-header {
         transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
@@ -53,6 +53,7 @@ Author: Damien Hourriez
             opacity: 0;
             transform: translateY(-10px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
@@ -171,10 +172,13 @@ Author: Damien Hourriez
             </div>
         </div>
 
-        <button class="w-full py-4 bg-gray-100 hover:bg-gray-200 rounded-lg text-center mt-4">
-            <span class="text-2xl mr-2">+</span>
-            Ajouter un contrat
-        </button>
+        <a href="<?php echo esc_url(home_url('/ajouter-contrat')); ?>">
+
+            <button class="w-full py-4 bg-gray-100 hover:bg-gray-200 rounded-lg text-center mt-4">
+                <span class="text-2xl mr-2">+</span>
+                Ajouter un contrat
+            </button>
+        </a>
 
         <!-- <div class="flex justify-end gap-2 mt-6">
             <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-50">1</button>
@@ -224,26 +228,26 @@ Author: Damien Hourriez
     </div>
 
     <script>
-    function openModal() {
-        document.getElementById('editModal').classList.add('active');
-        document.querySelector('main').classList.add('blur');
-        document.querySelector('header').classList.add('blur');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        document.getElementById('editModal').classList.remove('active');
-        document.querySelector('main').classList.remove('blur');
-        document.querySelector('header').classList.remove('blur');
-        document.body.style.overflow = '';
-    }
-
-    // Fermer le modal en cliquant en dehors
-    document.getElementById('editModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeModal();
+        function openModal() {
+            document.getElementById('editModal').classList.add('active');
+            document.querySelector('main').classList.add('blur');
+            document.querySelector('header').classList.add('blur');
+            document.body.style.overflow = 'hidden';
         }
-    });
+
+        function closeModal() {
+            document.getElementById('editModal').classList.remove('active');
+            document.querySelector('main').classList.remove('blur');
+            document.querySelector('header').classList.remove('blur');
+            document.body.style.overflow = '';
+        }
+
+        // Fermer le modal en cliquant en dehors
+        document.getElementById('editModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
     </script>
 
     <?php

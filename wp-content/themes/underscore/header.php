@@ -32,7 +32,9 @@
                 <button
                     class="px-8 py-3 rounded-full text-lg hover:bg-opacity-80 transition-colors duration-300"
                     style="background-color: <?= esc_attr($hero_button_bg_color); ?>; color: <?= esc_attr($hero_button_text_color); ?>;">
-                    <?php echo esc_html($hero_button_text); ?>
+                    <a href="<?php echo get_template_directory_uri(); ?>/inscription">
+                        <?php echo esc_html($hero_button_text); ?>
+                    </a>
                 </button>
             </div>
         </section>
