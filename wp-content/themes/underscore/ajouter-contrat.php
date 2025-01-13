@@ -340,6 +340,7 @@ get_template_part('template-parts/head');
                             class="w-full md:w-auto md:ml-auto md:block px-8 py-4 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
                         Suivant
                     </button>
+                    <input type="hidden" name="submit_contract" value="1">
                 </div>
             </form>
         </div>
@@ -373,8 +374,14 @@ get_template_part('template-parts/head');
                     }
                 });
 
-                // Update button text and visibility
-                nextBtn.textContent = currentStep === 3 ? 'Soumettre' : 'Suivant';
+                // Update button text and type for last step
+                if (currentStep === 3) {
+                    nextBtn.textContent = 'Soumettre';
+                    nextBtn.type = 'submit';
+                } else {
+                    nextBtn.textContent = 'Suivant';
+                    nextBtn.type = 'button';
+                }
                 backBtn.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
             }
 
@@ -404,9 +411,8 @@ get_template_part('template-parts/head');
                 if (currentStep < 3) {
                     currentStep++;
                     updateUI();
-                } else {
-                    form.submit();
                 }
+                // Supprimez le else { form.submit(); } car le formulaire sera soumis naturellement
             });
 
             updateUI();
