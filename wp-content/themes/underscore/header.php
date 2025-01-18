@@ -9,13 +9,13 @@
             <?php
             $default_image = get_template_directory_uri() . '/assets/images/montagne.png';
             $image_data = get_field('image_hero') ? get_field('image_hero') : $default_image;
-            $hero_title = get_field('hero_title');
-            $hero_subtitle = get_field('hero_subtitle');
-            $hero_button_text = get_field('hero_button_text');
-            $hero_title_color = get_field('hero_title_color');
-            $hero_subtitle_color = get_field('hero_subtitle_color');
-            $hero_button_bg_color = get_field('hero_button_background_color');
-            $hero_button_text_color = get_field('hero_button_text_color');
+            $hero_title = get_field('hero_title')  ?: 'Titre par défaut';
+            $hero_subtitle = get_field('hero_subtitle' ) ?: 'Sous-titre par défaut';
+            $hero_button_text = get_field('hero_button_text' ) ?: 'Bouton par défaut'; 
+            $hero_title_color = get_field('hero_title_color' ?: '#000000');
+            $hero_subtitle_color = get_field('hero_subtitle_color' ?: '#000000');
+            $hero_button_bg_color = get_field('hero_button_background_color' ?: '#000000');
+            $hero_button_text_color = get_field('hero_button_text_color' ?: '#000000');
             ?>
             <div id="parallaxBg" class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('<?= esc_url($image_data); ?>');"></div>
             <div class="relative z-10 space-y-8">

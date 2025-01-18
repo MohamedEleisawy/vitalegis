@@ -1,0 +1,168 @@
+/* Style du conteneur principal */
+.wrap {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 16px;
+    margin: 20px;
+}
+
+/* Titre de la page */
+.wrap h1 {
+    color: #0f172a;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #e2e8f0;
+}
+
+/* Grille des cartes analytics */
+.analytics-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style des cartes */
+.analytics-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.04);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* En-têtes des cartes */
+.analytics-card h3 {
+    color: #475569;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+/* Paragraphes dans les cartes */
+.analytics-card p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    color: #64748b;
+    font-size: 0.975rem;
+}
+
+/* Valeurs numériques */
+.analytics-card strong {
+    color: #0f172a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: #f8fafc;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Style pour les valeurs moyennes */
+.analytics-card strong.average {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+/* Modifier le style du graphique */
+.analytics-card canvas {
+    margin-top: 1.5rem;
+    height: 300px !important;  /* Hauteur fixe */
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Ajuster le conteneur du graphique */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Ajuster la taille des cartes pour le graphique */
+.analytics-card:nth-child(2) {
+    grid-column: span 2;
+}
+
+.analytics-card.with-chart {
+    max-width: 800px;
+    margin: 0 auto;
+    grid-column: span 2;
+    min-height: 400px;
+}
+
+@media (max-width: 1200px) {
+    .analytics-card.with-chart {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .analytics-card.with-chart {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .analytics-card:nth-child(2) {
+        grid-column: span 1;
+    }
+}
+
+/* Style pour les filtres de période */
+.period-filter {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #f8fafc;
+    color: #1e40af;
+    border-color: #1e40af;
+}
+
+.filter-btn.active {
+    background: #1e40af;
+    color: #fff;
+    border-color: #1e40af;
+}
+
+@media (max-width: 640px) {
+    .period-filter {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
