@@ -51,3 +51,8 @@ wp-cli.phar
 *.swp
 *.swo
 *~
+
+# fichier volumineux
+*.zip
+*.tar
+wp-content/ai1wm-backups/
