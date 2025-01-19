@@ -206,9 +206,9 @@ function afficher_message() {
                 Se déconnecter
             </a>
             <div class="relative group">
-                <?php
+            <?php
                 $current_user_id = get_current_user_id();
-                echo get_avatar($current_user_id, 40, '', '', array('class' => 'w-10 h-10 rounded-full cursor-pointer'));
+                echo get_avatar($current_user_id, 40, '', '', array('class' => 'w-10 h-10 rounded-full cursor-pointer '));
                 ?>
                 <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden group-hover:block z-50">
                     <nav class="grid gap-1 py-2">

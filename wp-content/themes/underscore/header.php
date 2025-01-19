@@ -9,9 +9,9 @@
             <?php
             $default_image = get_template_directory_uri() . '/assets/images/montagne.png';
             $image_data = get_field('image_hero') ? get_field('image_hero') : $default_image;
-            $hero_title = get_field('hero_title')  ?: 'Titre par défaut';
-            $hero_subtitle = get_field('hero_subtitle' ) ?: 'Sous-titre par défaut';
-            $hero_button_text = get_field('hero_button_text' ) ?: 'Bouton par défaut'; 
+            $hero_title = get_field('hero_title')  ?: ' Faciliter vos démarches avec Vitalegis';
+            $hero_subtitle = get_field('hero_subtitle' ) ?: ' Gestion de contrats et accompagnement';
+            $hero_button_text = get_field('hero_button_text' ) ?: 'Commencer'; 
             $hero_title_color = get_field('hero_title_color' ?: '#000000');
             $hero_subtitle_color = get_field('hero_subtitle_color' ?: '#000000');
             $hero_button_bg_color = get_field('hero_button_background_color' ?: '#000000');
