@@ -56,3 +56,4 @@ wp-cli.phar
 *.zip
 *.tar
 wp-content/ai1wm-backups/
+wp-content/backups-dup-lite/

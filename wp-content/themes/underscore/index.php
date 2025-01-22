@@ -33,9 +33,8 @@ Version: 1.0
 get_header();
 ?>
 <main class="site-main container mx-auto px-4 py-8">
-
     <!-- Section 1: Image à gauche, texte à droite (mobile: image en premier) -->
-    <section id="A-propos" class="py-12">
+    <section id="A-propos" class="py-12 bg-[#001a2b]">
         <?php
         $image1 = get_field('image_avantage_1') ?: 'URL_IMAGE_PAR_DEFAUT';
         $alt_image_1 = get_post_meta($image1, '_wp_attachment_image_alt', true) ?: 'Texte alternatif par défaut';
@@ -55,7 +54,7 @@ get_header();
         $couleur_titre = get_field('couleur_titre_section_services') ?: '#ffffff';
         ?>
         <!-- Section 1 -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">
+        <div class="grid md:grid-cols-2 gap-4 mb-16 items-center px-16">
             <div
                 class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md">
                 <?php if ($image1): ?>
@@ -78,7 +77,7 @@ get_header();
         </div>
 
         <!-- Section 2 -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">
+        <div class="grid md:grid-cols-2 gap-8 mb-16 items-center px-16">
             <div class="space-y-6 px-4 md:px-0 order-2 md:order-none">
                 <h2 class="text-2xl font-semibold text-blue-300"><?php echo esc_html($titre2); ?></h2>
                 <p class="text-white leading-relaxed"><?php echo esc_html($description2); ?></p>
@@ -91,7 +90,7 @@ get_header();
             </div>
         </div>
         <!-- Section 3 -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16 items-center">
+        <div class="grid md:grid-cols-2 gap-8 mb-16 items-center px-16">
             <div
                 class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md transform transition-transform duration-300 ease-out">
                 <img src="<?php echo esc_url($image3); ?>" alt="<?php echo esc_attr($alt_image_3) ?>"
@@ -110,7 +109,7 @@ get_header();
     <!-- Section services  -->
     <section class="py-20 bg-gray-800 relative">
         <div style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Fond-services-avantages.png');"
-            class="absolute inset-0 opacity-10 bg-cover bg-center">
+            class="absolute inset-0 bg-cover bg-center">
         </div>
         <div class="container mx-auto px-4 relative">
             <!-- Titre et sous-titre dynamiques -->
@@ -226,7 +225,7 @@ get_header();
     $texte_bouton = get_field('contact_texte_bouton') ?: 'Envoyer';
 
     // Couleurs dynamiques
-    $background_color = get_field('contact_background_color') ?: '#f7f7f7';
+    $background_color = get_field('contact_background_color') ?: '#001a2b';
     $text_color = get_field('contact_text_color') ?: '#333333';
     $button_color = get_field('contact_button_color') ?: '#1e3a8a';
     $button_hover_color = get_field('contact_button_hover_color') ?: '#2563eb';

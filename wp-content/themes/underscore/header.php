@@ -20,7 +20,7 @@
             <div id="parallaxBg" class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('<?= esc_url($image_data); ?>');"></div>
             <div class="relative z-10 space-y-8">
                 <h1
-                    class="text-4xl md:text-6xl font-bold font-gogh"
+                    class="text-3xl md:text-6xl font-bold font-gogh"
                     style="color: <?= esc_attr($hero_title_color); ?>;">
                     <?php echo esc_html($hero_title); ?>
                 </h1>

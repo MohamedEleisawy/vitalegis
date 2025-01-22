@@ -1,13 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Hello from custom.js");
-    const parallaxBg = document.getElementById("parallaxBg");
-    const heroText = document.querySelectorAll("#hero h1, #hero p, #hero button");
-  
-    // Parallax Effect
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      parallaxBg.style.transform = `translateY(${scrollY * 0.4}px)`;
-    });
+  console.log("Hello from custom.js");
+  const burgerBtn = document.getElementById('burger-btn');
+  const mobileMenuUser = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+
+  // Ouvrir le volet
+  if (burgerBtn && mobileMenuUser) {
+      burgerBtn.addEventListener('click', () => {
+          mobileMenuUser.classList.remove('translate-x-full');
+      });
+  }
+
+  // Fermer le volet
+  if (closeMenu && mobileMenuUser) {
+      closeMenu.addEventListener('click', () => {
+          mobileMenuUser.classList.add('translate-x-full');
+      });
+  }
+
+  const parallaxBg = document.getElementById("parallaxBg");
+  const heroText = document.querySelectorAll("#hero h1, #hero p, #hero button");
+
+  // Parallax Effect - seulement si l'élément existe
+  if (parallaxBg) {
+      window.addEventListener("scroll", () => {
+          const scrollY = window.scrollY;
+          parallaxBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+      });
+  }
   
     // Fade-in Animations
     let delay = 0.2;
@@ -55,4 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
     closeMobileMenu.addEventListener("click", () => {
       mobileMenu.classList.add("translate-x-full");
     });
+    
   });
