@@ -96,12 +96,79 @@ if (isset($_POST['submit_heir'])) {
     // Enregistrer les données dans les métadonnées de l'utilisateur
     update_user_meta($user_id, 'heritier_' . time(), $heir_data);
 
-    
-
-    // Générer un token  d'invitation
+    // Générer et enregistrer le token dans la base de données
     $token = wp_generate_password(32, false);
-    update_user_meta($user_id, 'heritier_token_' . time(), $token);
+    $wpdb->insert(
+        'wp_heir_requests',
+        array(
+            'user_id' => $user_id,
+            'heir_email' => $email,
+            'heir_token' => $token,
+            'status' => 'pending'
+        )
+    );
 
+    // Créer le lien de vérification et envoyer l'email
+    $verification_link = add_query_arg('token', $token, home_url('/verification-heritier'));
+    $message = "Bonjour,\n\n";
+    $message .= "Vous avez été désigné comme héritier par " . wp_get_current_user()->display_name . ".\n\n";
+    $message .= "Pour valider votre statut d'héritier, vous devrez :\n";
+    $message .= "1. Cliquer sur ce lien : " . $verification_link . "\n";
+    $message .= "2. Confirmer votre identité en répondant à ce mail tous les 6 mois\n";
+    $message .= "3. En cas de décès du titulaire, vous devrez fournir un certificat de décès\n\n";
+    $message .= "Ce processus garantit la sécurité et la confidentialité des données.\n\n";
+    $message .= "Cordialement,\n";
+    $message .= get_bloginfo('name');
+
+    // Modifier la partie d'envoi d'email dans le traitement du formulaire
+    $mail_sent = wp_mail(
+        $email,
+        'Confirmation de votre statut d\'héritier',
+        $message
+    );
+
+    // Logger le résultat de l'envoi
+    if ($mail_sent) {
+        // Log succès
+        error_log(sprintf(
+            'Email héritier envoyé avec succès à %s pour l\'utilisateur %d',
+            $email,
+            $user_id
+        ));
+        
+        // Ajouter une note dans les métadonnées de l'héritier
+        $heir_data['email_sent'] = true;
+        $heir_data['email_sent_date'] = current_time('mysql');
+    } else {
+        // Log échec
+        error_log(sprintf(
+            'Échec d\'envoi d\'email héritier à %s pour l\'utilisateur %d',
+            $email,
+            $user_id
+        ));
+        
+        // Ajouter une note dans les métadonnées de l'héritier
+        $heir_data['email_sent'] = false;
+        $heir_data['email_error'] = true;
+    }
+
+    // Ajouter un message spécifique pour l'administrateur
+    add_action('admin_notices', function() use ($mail_sent, $email) {
+        if (current_user_can('manage_options')) {
+            $class = $mail_sent ? 'notice-success' : 'notice-error';
+            $message = $mail_sent 
+                ? sprintf('Email envoyé avec succès à %s', $email)
+                : sprintf('Échec de l\'envoi de l\'email à %s', $email);
+            
+            printf('<div class="notice %s is-dismissible"><p>%s</p></div>', 
+                esc_attr($class), 
+                esc_html($message)
+            );
+        }
+    });
+
+    // Programmer l'envoi automatique tous les 6 mois
+    wp_schedule_event(time(), 'sixmonthly', 'check_heir_status', array($email));
 
     // Rediriger avec un message de succès
     wp_redirect(esc_url(add_query_arg('message', 'success', get_permalink())));
@@ -164,6 +231,23 @@ function afficher_message() {
             echo '<div class="mt-4 p-4 rounded-lg ' . esc_attr($class) . '">' . esc_html($text) . '</div>';
         }
     }
+}
+
+// Ajouter cette fonction
+function schedule_heir_verification($email) {
+    // Créer un nouvel email de vérification
+    $message = "Bonjour,\n\n";
+    $message .= "Dans le cadre de la vérification périodique de votre statut d'héritier, ";
+    $message .= "merci de confirmer que vous souhaitez maintenir ce statut en répondant simplement à cet email.\n\n";
+    $message .= "Si nous ne recevons pas de réponse dans les 30 jours, votre statut d'héritier sera suspendu.\n\n";
+    $message .= "Cordialement,\n";
+    $message .= get_bloginfo('name');
+
+    wp_mail(
+        $email,
+        'Vérification périodique de votre statut d\'héritier',
+        $message
+    );
 }
 
 get_template_part('template-parts/head');

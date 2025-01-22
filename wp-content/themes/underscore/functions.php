@@ -247,3 +247,44 @@ function um_custom_styles() {
     wp_enqueue_style('um-custom', get_template_directory_uri() . '/assets/css/style.css');
 }
 add_action('wp_enqueue_scripts', 'um_custom_styles', 99);
+
+// Ajouter cette fonction pour activer le debugging des emails
+function setup_email_logging($phpmailer) {
+    $phpmailer->SMTPDebug = 2; // Niveau de debug détaillé
+    $phpmailer->Debugoutput = function($str, $level) {
+        error_log("PHPMailer Debug: $str");
+    };
+}
+add_action('phpmailer_init', 'setup_email_logging');
+
+// Fonction pour vérifier la configuration email
+function check_email_configuration() {
+    $home_url = home_url();
+    $admin_email = get_option('admin_email');
+    $site_name = get_option('blogname');
+    
+    error_log("Configuration email du site :");
+    error_log("URL : $home_url");
+    error_log("Admin email : $admin_email");
+    error_log("Nom du site : $site_name");
+}
+add_action('admin_init', 'check_email_configuration');
+
+// Logger les emails au lieu de les envoyer
+function log_email_locally($wp_mail) {
+    $log_message = sprintf(
+        "Email envoyé :\nTo: %s\nSubject: %s\nMessage: %s\n",
+        implode(', ', $wp_mail['to']),
+        $wp_mail['subject'],
+        $wp_mail['message']
+    );
+    
+    error_log($log_message);
+    
+    // Créer un fichier de log dans wp-content
+    $log_file = WP_CONTENT_DIR . '/email_log.txt';
+    file_put_contents($log_file, $log_message . "\n", FILE_APPEND);
+    
+    return $wp_mail;
+}
+add_filter('wp_mail', 'log_email_locally');
