@@ -288,3 +288,17 @@ function log_email_locally($wp_mail) {
     return $wp_mail;
 }
 add_filter('wp_mail', 'log_email_locally');
+
+// Configuration SMTP Gmail
+function configure_smtp($phpmailer) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host = 'smtp.gmail.com';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Port = '587';
+    $phpmailer->Username = 'votre.email@gmail.com';
+    $phpmailer->Password = 'votre_mot_de_passe_app'; // Mot de passe d'application
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->From = 'votre.email@gmail.com';
+    $phpmailer->FromName = 'Votre Nom';
+}
+add_action('phpmailer_init', 'configure_smtp');
