@@ -1,6 +1,5 @@
-<footer
-    style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/fond-footer.png');"
-    class="bg-gray-900 py-12 px-6">
+<footer style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/fond-footer.png');"
+    class="bg-gray-900 py-8 px-6"> <!-- Reduced padding from py-12 to py-8 -->
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Div du logo à gauche -->
