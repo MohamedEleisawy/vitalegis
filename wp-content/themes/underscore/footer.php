@@ -30,18 +30,18 @@
                     <h3 class="font-semibold text-white">Réseaux sociaux</h3>
                     <ul class="grid gap-2 text-gray-300">
                         <li class="hover:text-white transition-colors duration-300">
-                            <a href="<?php echo get_field('lien_x') ?: '#'; ?>" class="inline-block">
-                                <i class="fab fa-twitter mr-2"></i> X
+                            <a target="_blank" href="<?php echo get_field('lien_x') ?: '#'; ?>" class="inline-block">
+                            <i class="fa-brands fa-x-twitter"></i> X
                             </a>
                         </li>
                         <li class="hover:text-white transition-colors duration-300">
-                            <a href="<?php echo get_field('lien_linkedin', 'option') ?: '#'; ?>" class="inline-block">
-                                <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        <a target="_blank" href="<?php echo get_field('lien_linkedin') ?: '#'; ?>" class="inline-block">
+                                <i class="fab fa-linkedin"></i> LinkedIn
                             </a>
                         </li>
                         <li class="hover:text-white transition-colors duration-300">
-                            <a href="<?php echo get_field('lien_facebook', 'option') ?: '#'; ?>" class="inline-block">
-                                <i class="fab fa-facebook mr-2"></i> Facebook
+                        <a target="_blank" href="<?php echo get_field('lien_instagram') ?: '#'; ?>" class="inline-block">
+                            <i class="fa-brands fa-instagram"></i> Instagram
                             </a>
                         </li>
                     </ul>

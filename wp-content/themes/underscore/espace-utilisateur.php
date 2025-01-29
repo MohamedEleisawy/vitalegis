@@ -193,42 +193,7 @@ function afficher_message() {
 </head>
 
 <body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
-
-    <header class="bg-slate-900 px-4 sm:px-6 py-4 grid grid-cols-[auto_1fr] items-center">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="font-bold text-blue-600">
-            <img class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-dore.png"
-                alt="<?php bloginfo('name'); ?>">
-        </a>
-        <div class="grid grid-flow-col auto-cols-max gap-2 sm:gap-4 justify-end items-center">
-            <a href="<?php echo esc_url(um_get_core_page('logout')); ?>"
-                class="text-white hidden sm:block hover:text-gray-300">
-                Se déconnecter
-            </a>
-            <div class="relative group">
-            <?php
-                $current_user_id = get_current_user_id();
-                echo get_avatar($current_user_id, 40, '', '', array('class' => 'w-10 h-10 rounded-full cursor-pointer '));
-                ?>
-                <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden group-hover:block z-50">
-                    <nav class="grid gap-1 py-2">
-                        <a href="<?php echo esc_url(um_user_profile_url()); ?>"
-                            class="px-4 py-2 hover:bg-gray-100">
-                            Profile
-                        </a>
-                        <a href="<?php echo esc_url(home_url('/acces-heritier')); ?>"
-                            class="px-4 py-2 hover:bg-gray-100">
-                            Accès Héritier
-                        </a>
-                        <a href="<?php echo esc_url(um_get_core_page('logout')); ?>"
-                            class="px-4 py-2 hover:bg-gray-100">
-                            Se déconnecter
-                        </a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+<?php get_template_part('template-parts/user-navigation'); ?>
 
     <main class="container mx-auto px-4 sm:px-6 py-8 min-h-[calc(100vh-300px)]">
         <?php afficher_message(); ?>

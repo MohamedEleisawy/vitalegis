@@ -29,7 +29,7 @@
         <!-- Buttons for Desktop -->
         <div class="hidden md:grid grid-flow-col gap-4 justify-self-end">
             <?php if (is_user_logged_in()): ?>
-                <a href="<?php echo get_permalink(get_page_by_path('profil')); ?>"
+                <a href="<?php echo get_permalink(get_page_by_path('user')); ?>"
                     class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300">
                     Mon Profil
                 </a>

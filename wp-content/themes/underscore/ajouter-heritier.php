@@ -170,7 +170,8 @@ get_template_part('template-parts/head');
 ?>
 
 <body class="min-h-screen bg-gray-50">
-    <?php get_template_part('template-parts/header'); ?>
+<?php get_template_part('template-parts/user-navigation'); ?>
+
 
     <main class="min-h-[calc(100vh-64px-180px)] pb-8"> <!-- 64px header, 180px footer -->
         <div class="container mx-auto px-4 sm:px-6 py-8">
