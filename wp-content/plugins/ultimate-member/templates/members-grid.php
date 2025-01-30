@@ -46,7 +46,6 @@ $unique_hash = substr( md5( $args['form_id'] ), 10, 5 ); ?>
 								</a>
 							</div>
 						</div>
-						
 					<?php }
 
 					if ( $profile_photo ) { ?>

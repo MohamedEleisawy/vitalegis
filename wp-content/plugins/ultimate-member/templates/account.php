@@ -6,7 +6,7 @@
  *
  * Page: "Account"
  *
- * @version 2.7.0
+ * @version 2.9.2
  *
  * @var string $mode
  * @var int    $form_id
@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="um <?php echo esc_attr( $this->get_class( $mode ) ); ?> um-<?php echo esc_attr( $form_id ); ?>">
-[ultimatemember_account]
 
 	<div class="um-form">
 
@@ -76,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</a>
 					</div>
 
-					<?php if ( UM()->mobile()->isMobile() ) { ?>
+					<?php if ( wp_is_mobile() ) { ?>
 
 						<div class="um-account-meta-img-b uimob800-show" title="<?php echo esc_attr( um_user( 'display_name' ) ); ?>">
 							<a href="<?php echo esc_url( um_user_profile_url() ); ?>">
@@ -115,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							?>
 							<li>
 								<a data-tab="<?php echo esc_attr( $id )?>" href="<?php echo esc_url( UM()->account()->tab_link( $id ) ); ?>" class="um-account-link <?php if ( $id == UM()->account()->current_tab ) echo 'current'; ?>">
-									<?php if ( UM()->mobile()->isMobile() ) { ?>
+									<?php if ( wp_is_mobile() ) { ?>
 										<span class="um-account-icontip uimob800-show" title="<?php echo esc_attr( $info['title'] ); ?>">
 											<i class="<?php echo esc_attr( $info['icon'] ); ?>"></i>
 										</span>
@@ -193,6 +192,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'um_after_account_page_load' );
 		?>
-		
 	</div>
 </div>
