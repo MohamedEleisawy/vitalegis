@@ -54,6 +54,7 @@
                     margin-bottom: 8px;
                 }
 
+                /* Inputs sans hover */
                 .um-323 input[type="text"],
                 .um-323 input[type="password"] {
                     width: 100%;
@@ -61,7 +62,6 @@
                     border: 2px solid #e2e8f0;
                     border-radius: 12px;
                     font-size: 16px;
-                    transition: all 0.3s ease;
                 }
 
                 .um-323 input[type="text"]:focus,

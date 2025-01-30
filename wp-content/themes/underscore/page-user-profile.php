@@ -98,7 +98,7 @@
                     background: #ffffff;
                 }
 
-                /* Field Styling */
+                /* Field Styling sans hover */
                 .um-field {
                     background: linear-gradient(145deg, #f8f9fa, #ffffff);
                     margin: 16px 0;
@@ -106,12 +106,6 @@
                     border-radius: 16px;
                     border: 1px solid rgba(0, 0, 0, 0.05);
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-                    transition: all 0.3s ease;
-                }
-
-                .um-field:hover {
-                    transform: translateX(5px);
-                    border-left: 3px solid rgb(15, 23, 42);
                 }
 
                 .um-field-label {
