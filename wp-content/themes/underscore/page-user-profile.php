@@ -115,7 +115,8 @@
                 }
 
                 .um-field-label {
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: auto 1fr;
                     align-items: center;
                     margin-bottom: 12px;
                 }
