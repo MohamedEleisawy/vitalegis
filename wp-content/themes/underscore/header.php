@@ -18,19 +18,19 @@
             $hero_button_text_color = get_field('hero_button_text_color' ?: '#000000');
             ?>
             <div id="parallaxBg" class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('<?= esc_url($image_data); ?>');"></div>
-            <div class="relative z-10 space-y-8">
+            <div class="relative z-10 space-y-8 bg-white/60 max-w-[850px] p-8 rounded-[30px]">
                 <h1
                     class="text-3xl md:text-6xl font-bold font-gogh"
                     style="color: <?= esc_attr($hero_title_color); ?>;">
                     <?php echo esc_html($hero_title); ?>
                 </h1>
                 <p
-                    class="text-xl md:text-2xl font-montserrat"
+                    class="text-xl md:text-xl font-montserrat"
                     style="color: <?= esc_attr($hero_subtitle_color); ?>;">
                     <?php echo esc_html($hero_subtitle); ?>
                 </p>
                 <button
-                    class="px-8 py-3 rounded-full text-lg hover:bg-opacity-80 transition-colors duration-300"
+                    class="px-8 py-3 rounded-lg text-lg hover:bg-opacity-80 transition-colors duration-300 min-w-[150px]"
                     style="background-color: <?= esc_attr($hero_button_bg_color); ?>; color: <?= esc_attr($hero_button_text_color); ?>;">
                     <a href="<?php echo get_template_directory_uri(); ?>/inscription">
                         <?php echo esc_html($hero_button_text); ?>

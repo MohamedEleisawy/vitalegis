@@ -13,6 +13,7 @@
         <!-- Desktop Menu -->
         <nav class="hidden md:grid grid-flow-col gap-4 text-white justify-self-center">
             <?php if (!is_page(['inscription', 'connexion'])): ?>
+                
                 <?php
                 // Menu principal (Accueil, À propos, etc.)
                 wp_nav_menu(array(
@@ -21,8 +22,10 @@
                     'items_wrap' => '<ul class="grid grid-flow-col gap-5">%3$s</ul>',
                     'link_before' => '<span class="text-white hover:text-blue-500 transition-colors duration-300">',
                     'link_after' => '</span>',
-                ));
+                ) );
+                
                 ?>
+                
             <?php endif; ?>
         </nav>
 
@@ -30,24 +33,25 @@
         <div class="hidden md:grid grid-flow-col gap-4 justify-self-end">
             <?php if (is_user_logged_in()): ?>
                 <a href="<?php echo get_permalink(get_page_by_path('user')); ?>"
-                    class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300">
+                    class="px-4 py-2 rounded-lg bg-white text-black ">
                     Mon Profil
                 </a>
                 <a href="<?php echo wp_logout_url(home_url()); ?>"
-                    class="px-4 py-2 rounded-full text-gray-100 border border-gray-100 hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                    class="px-4 py-2 rounded-lg text-white border border-white hover:bg-gray-800 hover:text-white transition-colors duration-300">
                     Déconnexion
                 </a>
             <?php else: ?>
                 <?php if (!is_page('connexion')): ?>
                     <a href="<?php echo get_template_directory_uri(); ?>/connexion"
-                        class="px-4 py-2 rounded-full text-gray-100 border border-gray-100 hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                        class="px-4 py-2 rounded-lg text-white border border-white hover:bg-gray-800 hover:text-white transition-colors duration-300">
                         Se connecter
                     </a>
                 <?php endif; ?>
 
                 <?php if (!is_page('inscription')): ?>
                     <a href="<?php echo get_template_directory_uri(); ?>/inscription"
-                        class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300">
+                    class="px-4 py-2 rounded-lg bg-white text-black transition-colors duration-300 border border-white">
+                    <!-- hover:bg-blue-600 hover:text-white -->
                         S'inscrire
                     </a>
                 <?php endif; ?>
@@ -93,7 +97,7 @@
                         'items_wrap' => '<ul class="grid gap-4">%3$s</ul>',
                         'link_before' => '<span class="text-white hover:text-blue-500 transition-colors duration-300">',
                         'link_after' => '</span>',
-                    ));
+                    )?:get_home_url());
                     ?>
                 <?php endif; ?>
             </nav>
@@ -102,14 +106,14 @@
             <div class="grid gap-4">
                 <?php if (!is_page('connexion')): ?>
                     <a href="<?php echo get_template_directory_uri(); ?>/connexion"
-                        class="w-full px-4 py-2 rounded-full text-gray-100 border border-gray-100 hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                        class="w-full px-4 py-2 rounded-lg text-gray-100 border border-gray-100 hover:bg-gray-800 hover:text-white transition-colors duration-300">
                         Se connecter
                     </a>
                 <?php endif; ?>
 
                 <?php if (!is_page('inscription')): ?>
                     <a href="<?php echo get_template_directory_uri(); ?>/inscription"
-                        class="w-full px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300">
+                        class="w-full px-4 py-2 rounded-lg bg-white text-black hover:bg-blue-700 transition-colors duration-300">
                         S'inscrire
                     </a>
                 <?php endif; ?>

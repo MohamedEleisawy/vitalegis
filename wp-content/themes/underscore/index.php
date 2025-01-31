@@ -27,6 +27,23 @@ Version: 1.0
     #mobileMenu.open {
         transform: translateX(0);
     }
+    .parallax-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+}
 </style>
 </head>
 <?php
@@ -228,7 +245,7 @@ get_header();
     $background_color = get_field('contact_background_color') ?: '#001a2b';
     $text_color = get_field('contact_text_color') ?: '#333333';
     $button_color = get_field('contact_button_color') ?: '#1e3a8a';
-    $button_hover_color = get_field('contact_button_hover_color') ?: '#2563eb';
+    // $button_hover_color = get_field('contact_button_hover_color') ?: '#2563eb';
     $couleur_contour_formulaire = get_field('contact_couleur_contour_formulaire') ?: '#e2e8f0';
     $button_text_color = get_field('contact_button_text_color') ?: '#000';
     $svg_background_color = get_field('contact_svg_color') ?: '#ffffff'; // Valeur par défaut : blanc
@@ -321,9 +338,9 @@ get_header();
                     <button type="submit" name="submit" class="w-full py-2 rounded-full transition-colors duration-300"
                         style="background-color: <?php echo esc_attr($button_color); ?>; 
            color: <?php echo esc_attr($button_text_color); ?>;"
-                        onmouseover="this.style.backgroundColor='<?php echo esc_attr($button_hover_color); ?>'"
-                        onmouseout="this.style.backgroundColor='<?php echo esc_attr($button_color); ?>'">
+                        >
                         <?php echo esc_html($texte_bouton); ?>
+                        
                     </button>
                 </form>
 

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (parallaxBg) {
       window.addEventListener("scroll", () => {
           const scrollY = window.scrollY;
-          parallaxBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+          parallaxBg.style.transform = `translateY(${scrollY * 0.55}px)`;
       });
   }
   
@@ -41,28 +41,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }, delay * 1000);
       delay += 0.2;
     });
-  
-    // Parallax effect on the div and image
-    document.addEventListener("scroll", () => {
-      const elements = document.querySelectorAll(".parallax-container");
-      const scrollPosition = window.scrollY;
-  
-      elements.forEach((el) => {
-        const img = el.querySelector(".parallax-img");
-        if (!img) return; // Skip if image not found
-  
-        const offset = el.getBoundingClientRect().top + window.scrollY;
-  
-        // Parallax effect for the image
-        const movement = (scrollPosition - offset) * 0.08;
-        img.style.transform = `translateY(${movement}px)`;
-  
-        // Scale effect on the div
-        const scaleFactor = 1 + Math.min((scrollPosition - offset) * 0.0002, 0.1);
-        el.style.transform = `scale(${scaleFactor})`;
-      });
+    const serviceImages = document.querySelectorAll('#A-propos .parallax-img');
+    
+    window.addEventListener('scroll', () => {
+        serviceImages.forEach(img => {
+            const container = img.closest('.parallax-container');
+            const rect = container.getBoundingClientRect();
+            
+            // Vérifier si l'image est visible dans le viewport
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                const scale = 1 + (scrollProgress * 0.5); 
+                
+                img.style.transform = `scale(${scale})`;
+                img.style.transformOrigin = 'center center';
+            }
+        });
     });
-  
     // Script to toggle mobile menu visibility
     const mobileMenuButton = document.getElementById("mobileMenuButton");
     const mobileMenu = document.getElementById("mobileMenu");

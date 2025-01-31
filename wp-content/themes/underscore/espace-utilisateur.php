@@ -192,12 +192,12 @@ function afficher_message() {
 </style>
 </head>
 
-<body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
-<?php get_template_part('template-parts/user-navigation'); ?>
+<body>
+    <?php get_template_part('template-parts/user-navigation'); ?>
 
     <main class="container mx-auto px-4 sm:px-6 py-8 min-h-[calc(100vh-300px)]">
         <?php afficher_message(); ?>
-        <h1 class="text-2xl sm:text-3xl font-bold mb-8">Vos documents</h1>
+        <h1 class="text-2xl sm:text-3xl font-bold mb-8">Vos contrats</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div class="relative col-span-1">
@@ -210,7 +210,6 @@ function afficher_message() {
                 <button class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50">Trier par</button>
                 <button class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50">date d'ajout</button>
                 <button class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50">Date de signature</button>
-                <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 justify-self-end">Tout sélectionner</button>
             </div>
         </div>
 

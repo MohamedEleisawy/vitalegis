@@ -1,15 +1,14 @@
-<footer style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/fond-footer.png');"
-    class="bg-gray-900 py-8 px-6"> <!-- Reduced padding from py-12 to py-8 -->
+<footer style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/fond-footer.png');" class="bg-gray-900 py-8 px-6">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Div du logo à gauche -->
-            <div class="grid gap-2">
+
+        <div class="grid gap-2">
                 <div class="px-6 py-2">
                     <a href="<?php echo home_url(); ?>" class="font-bold text-blue-600">
                         <img class="w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-dore.png" alt="Logo du site Vitalegis">
                     </a>
                 </div>
-                <!-- met le texte en gras  -->
+
                 <p class="text-gray-300 font-semibold">
                     <?php echo get_field('slogan') ?: 'Simplifiez vos démarches administratives après un décès.'; ?>
                 </p>
@@ -30,18 +29,18 @@
                     <h3 class="font-semibold text-white">Réseaux sociaux</h3>
                     <ul class="grid gap-2 text-gray-300">
                         <li class="hover:text-white transition-colors duration-300">
-                            <a target="_blank" href="<?php echo get_field('lien_x') ?: '#'; ?>" class="inline-block">
-                            <i class="fa-brands fa-x-twitter"></i> X
+                            <a target="_blank" href="<?php echo get_field('lien_x') ?: 'https://x.com/vitalegis11538'; ?>" class="inline-block">
+                                <i class="fa-brands fa-x-twitter"></i> X
                             </a>
                         </li>
                         <li class="hover:text-white transition-colors duration-300">
-                        <a target="_blank" href="<?php echo get_field('lien_linkedin') ?: '#'; ?>" class="inline-block">
+                            <a target="_blank" href="<?php echo get_field('lien_linkedin') ?: ''; ?>" class="inline-block">
                                 <i class="fab fa-linkedin"></i> LinkedIn
                             </a>
                         </li>
                         <li class="hover:text-white transition-colors duration-300">
-                        <a target="_blank" href="<?php echo get_field('lien_instagram') ?: '#'; ?>" class="inline-block">
-                            <i class="fa-brands fa-instagram"></i> Instagram
+                            <a target="_blank" href="<?php echo get_field('lien_instagram') ?: 'https://www.instagram.com/vitalegis.web/'; ?>" class="inline-block">
+                                <i class="fa-brands fa-instagram"></i> Instagram
                             </a>
                         </li>
                     </ul>
@@ -52,18 +51,18 @@
                     <h3 class="font-semibold text-white">Légal</h3>
                     <ul class="grid gap-2 text-gray-300">
                         <li class="hover:text-white transition-colors duration-300">
-                            <a href="<?php echo get_field('lien_cookies', 'option') ?: '#'; ?>" class="inline-block">
+                            <a href="<?php echo get_permalink(get_page_by_path('politique-des-cookies')); ?>" class="inline-block">
                                 Cookies
                             </a>
                         </li>
                         <li class="hover:text-white transition-colors duration-300">
-                            <a href="<?php echo get_field('lien_mentions_legales', 'option') ?: '#'; ?>" class="inline-block">
+                            <a href="<?php echo get_permalink(get_page_by_path('mentions-legales')); ?>" class="inline-block">
                                 Mentions légales
                             </a>
                         </li>
                         <li class="hover:text-white transition-colors duration-300">
-                            <a href="<?php echo get_field('lien_conditions_utilisation', 'option') ?: '#'; ?>" class="inline-block">
-                                Conditions d'utilisations
+                            <a href="<?php echo get_permalink(get_page_by_path('politique-de-confidentialite')); ?>" class="inline-block">
+                                Politique de confidentialité
                             </a>
                         </li>
                     </ul>
