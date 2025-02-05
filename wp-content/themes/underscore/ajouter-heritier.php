@@ -207,6 +207,7 @@ get_template_part('template-parts/head');
 
                 if (!empty($heritiers)) :
                     foreach ($heritiers as $key => $heritier) :
+                        if (!is_array($heritier)) continue;
                 ?>
                     <div class="bg-white rounded-lg shadow overflow-hidden">
                         <div class="grid grid-cols-[2px_1fr]">

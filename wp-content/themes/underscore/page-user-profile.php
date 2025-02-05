@@ -12,7 +12,7 @@
 
 <body class="min-h-screen grid grid-rows-[auto,1fr,auto] bg-white">
 
-<?php get_template_part('template-parts/user-navigation'); ?>
+    <?php get_template_part('template-parts/user-navigation'); ?>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
@@ -26,18 +26,15 @@
                     opacity: 1 !important;
                     visibility: visible !important;
                     background: #ffffff;
-                    border-radius: 24px;
+                    border-radius: 24px !important;
                     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
                     padding: 0;
                     max-width: 800px;
                     margin: 40px auto;
-                    overflow: hidden;
                     transition: transform 0.3s ease;
                 }
 
-                .um-profile:hover {
-                    transform: translateY(-5px);
-                }
+
 
                 /* Header Section with Background */
                 .um-header {
@@ -155,8 +152,8 @@
 
                 /* Hide Elements */
                 .um-profile-status,
-                .um-profile-nav-posts, 
-                .um-profile-nav-comments, 
+                .um-profile-nav-posts,
+                .um-profile-nav-comments,
                 .um-profile-nav {
                     display: none !important;
                 }
@@ -192,6 +189,16 @@
                     border-bottom: 1px solid #1a4c7c;
                 }
 
+                .um-button {
+                    background: rgb(15, 23, 42) !important;
+                    color: white !important;
+                    border: none !important;
+                    padding: 12px 24px !important;
+                    border-radius: 12px !important;
+                    cursor: pointer !important;
+                    transition: all 0.3s ease !important;
+                }
+
                 @media (max-width: 768px) {
                     .um-profile {
                         margin: 20px auto;
@@ -210,6 +217,97 @@
                         width: 140px;
                         height: 140px;
                     }
+                }
+
+                /* Style simple du datepicker */
+                .picker {
+                    color: rgb(15, 23, 42);
+                }
+
+                .picker__box {
+                    background: white;
+                }
+
+                .picker__select--year {
+                    color: rgb(15, 23, 42);
+                }
+
+                .picker__day {
+                    color: rgb(15, 23, 42);
+                }
+
+                .picker__day:hover,
+                .picker__day--today {
+                    background: rgb(15, 23, 42) !important;
+                    color: white !important;
+                }
+
+                .picker__day--selected,
+                .picker__day--selected:hover {
+                    background: rgb(15, 23, 42) !important;
+                    color: white !important;
+                }
+
+                .picker__day--today {
+                    color: rgb(15, 23, 42);
+                    font-weight: bold;
+                }
+
+                .picker__day--disabled {
+                    color: #cbd5e1 !important;
+                }
+
+                .picker__day--outfocus {
+                    color: #94a3b8;
+                }
+
+                .picker__button--today,
+                .picker__button--clear,
+                .picker__button--close {
+                    color: rgb(15, 23, 42);
+                }
+
+                /* Style du header datepicker */
+                .picker__header {
+                    padding: 10px;
+                    background: rgb(15, 23, 42);
+                    border-radius: 8px;
+                    margin-bottom: 15px;
+                }
+
+                .picker__select--year {
+                    padding: 4px 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 6px;
+                    font-size: 14px;
+                    color: white;
+                    background: rgba(255, 255, 255, 0.1);
+                }
+
+                .picker__month {
+                    font-weight: 600;
+                    color: white;
+                    font-size: 16px;
+                }
+
+                .picker__nav--prev,
+                .picker__nav--next {
+                    color: white;
+                    opacity: 0.7;
+                }
+
+                .picker__nav--disabled {
+                    opacity: 0.3;
+                    cursor: not-allowed;
+                }
+
+                .picker__footer {
+                    background: rgb(15, 23, 42);
+                }
+
+                .picker__button--today,
+                .picker__button--clear {
+                    color: white;
                 }
             </style>
 
