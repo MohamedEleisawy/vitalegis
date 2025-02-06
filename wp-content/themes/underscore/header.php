@@ -24,11 +24,11 @@
                     style="color: <?= esc_attr($hero_title_color); ?>;">
                     <?php echo esc_html($hero_title); ?>
                 </h1>
-                <p
+                <h2
                     class="text-xl md:text-xl font-montserrat"
                     style="color: <?= esc_attr($hero_subtitle_color); ?>;">
                     <?php echo esc_html($hero_subtitle); ?>
-                </p>
+                </h2>
                 <button
                     class="px-8 py-3 rounded-lg text-lg hover:bg-opacity-80 transition-colors duration-300 min-w-[150px]"
                     style="background-color: <?= esc_attr($hero_button_bg_color); ?>; color: <?= esc_attr($hero_button_text_color); ?>;">

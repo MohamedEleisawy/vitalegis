@@ -43,6 +43,14 @@
             font-family: 'gogh';
             src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/Gogh-ExtraBold.otf');
         }
-        
+        p{
+            font-family: 'montserrat' !important;
+            font-weight: 300 !important;
+            font-size: 17px !important;
+        }
+        h2{
+            font-family: 'montserrat' !important;
+            font-weight: 600 !important;
+        }
     </style>
 </head>

@@ -50,8 +50,8 @@
     </div>
 
     <!-- Volet mobile -->
-    <div id="mobile-menu"
-        class="lg:hidden fixed top-0 right-0 h-full w-64 bg-slate-800 transform translate-x-full transition-transform duration-300 z-50 shadow-2xl">
+    <div id="mobile-menu" 
+        class=" lg:hidden fixed top-0 right-0 h-auto w-64 bg-slate-800 transform translate-x-full transition-transform duration-300 z-50 shadow-2xl">
         <div class="p-6 grid gap-6">
             <button id="close-menu" class="text-white text-2xl justify-self-end hover:text-yellow-400">✕</button>
             <div class="grid gap-6">

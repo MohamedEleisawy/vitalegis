@@ -41,23 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, delay * 1000);
       delay += 0.2;
     });
-    const serviceImages = document.querySelectorAll('#A-propos .parallax-img');
-    
-    window.addEventListener('scroll', () => {
-        serviceImages.forEach(img => {
-            const container = img.closest('.parallax-container');
-            const rect = container.getBoundingClientRect();
-            
-            // Vérifier si l'image est visible dans le viewport
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-                const scale = 1 + (scrollProgress * 0.5); 
-                
-                img.style.transform = `scale(${scale})`;
-                img.style.transformOrigin = 'center center';
-            }
-        });
-    });
+   
     // Script to toggle mobile menu visibility
     const mobileMenuButton = document.getElementById("mobileMenuButton");
     const mobileMenu = document.getElementById("mobileMenu");

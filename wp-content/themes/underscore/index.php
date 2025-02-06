@@ -51,7 +51,7 @@ get_header();
 ?>
 <main class="site-main container mx-auto px-4 py-8">
     <!-- Section 1: Image à gauche, texte à droite (mobile: image en premier) -->
-    <section id="A-propos" class="py-12 bg-[#001a2b]">
+    <section id="A-propos" class="py-12 bg-[#001a2b] ">
         <?php
         $image1 = get_field('image_avantage_1') ?: 'URL_IMAGE_PAR_DEFAUT';
         $alt_image_1 = get_post_meta($image1, '_wp_attachment_image_alt', true) ?: 'Texte alternatif par défaut';
@@ -73,10 +73,10 @@ get_header();
         <!-- Section 1 -->
         <div class="grid md:grid-cols-2 gap-4 mb-16 items-center px-16">
             <div
-                class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md">
+                class="relative w-full max-w-sm mx-auto h-72 md:h-80 overflow-hidden rounded-lg shadow-md">
                 <?php if ($image1): ?>
                     <img src="<?php echo esc_url($image1); ?>" alt="<?php echo esc_attr($alt_image_1); ?>"
-                        class="parallax-img w-full h-full object-cover" />
+                        class="w-full h-full object-cover" />
                 <?php else: ?>
                     <div class="bg-gray-200 w-full h-full flex items-center justify-center text-gray-500">
                         Image non disponible
@@ -101,7 +101,7 @@ get_header();
             </div>
 
             <div
-                class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md transform transition-transform duration-300 ease-out">
+                class="parallax-container relative w-full max-w-sm mx-auto h-72 md:h-80 overflow-hidden rounded-lg shadow-md transform transition-transform duration-300 ease-out">
                 <img src="<?php echo esc_url($image2); ?>" alt="<?php echo esc_attr($alt_image_2) ?>"
                     class="parallax-img w-full h-full object-cover transition-transform duration-300 ease-out" />
             </div>
@@ -109,7 +109,7 @@ get_header();
         <!-- Section 3 -->
         <div class="grid md:grid-cols-2 gap-8 mb-16 items-center px-16">
             <div
-                class="parallax-container relative w-full max-w-sm mx-auto h-64 md:h-80 overflow-hidden rounded-lg shadow-md transform transition-transform duration-300 ease-out">
+                class="parallax-container relative w-full max-w-sm mx-auto h-72 md:h-80 overflow-hidden rounded-lg shadow-md transform transition-transform duration-300 ease-out">
                 <img src="<?php echo esc_url($image3); ?>" alt="<?php echo esc_attr($alt_image_3) ?>"
                     class="parallax-img w-full h-full object-cover transition-transform duration-300 ease-out" />
             </div>

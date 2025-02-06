@@ -280,6 +280,7 @@ function afficher_message() {
         .modal-content textarea {
             font-size: 16px; /* Empêche le zoom sur iOS */
         }
+
     }
 </style>
 </head>
@@ -293,7 +294,7 @@ function afficher_message() {
 
         <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 mb-6">
             <!-- Barre de recherche -->
-            <div class="relative">
+            <div>
                 <input type="search" placeholder="Rechercher" class="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -301,7 +302,7 @@ function afficher_message() {
             </div>
 
             <!-- Bouton de tri -->
-            <div class="relative w-[200px]">
+            <div class="w-[200px]">
                 <button id="sortButton" class="w-full px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50 grid grid-cols-[1fr_auto] items-center gap-2">
                     <span class="truncate text-left">Trier par</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
